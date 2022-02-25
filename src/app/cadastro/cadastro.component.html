@@ -5,19 +5,24 @@
       <div class="form-group">
         <label for="nome">Nome</label>
         <input
-          type="email"
+          [(ngModel)]="usuario.nomeUsuario"
+          type="text"
           class="form-control"
           id="nome"
+          name="nome"
           aria-describedby="nomeHelp"
           placeholder="Nome"
+          required
         />
       </div>
       <div class="form-group">
         <label for="telefone">Telefone</label>
         <input
-          type="text"
+          [(ngModel)]="usuario.telefoneUsuario"
+          type="tel"
           class="form-control"
           id="telefone"
+          name="telefone"
           aria-describedby="telefoneHelp"
           placeholder="Telefone"
         />
@@ -25,9 +30,11 @@
       <div class="form-group">
         <label for="foto">Foto de perfil</label>
         <input
+          [(ngModel)]="usuario.fotoUsuario"
           type="text"
           class="form-control"
           id="foto"
+          name="foto"
           aria-describedby="fotoHelp"
           placeholder="Link da foto"
         />
@@ -35,9 +42,11 @@
       <div class="form-group">
         <label for="email">Email</label>
         <input
+          [(ngModel)]="usuario.emailUsuario"
           type="email"
           class="form-control"
           id="email"
+          name="email"
           aria-describedby="emailHelp"
           placeholder="Digite seu Email"
         />
@@ -45,22 +54,29 @@
       <div class="form-group">
         <label for="senha">Senha</label>
         <input
+          (input)="checarSenha($event)"
           type="password"
           class="form-control"
           id="senha"
+          name="senha"
+          aria-describedby="senhaHelp"
           placeholder="Senha"
         />
       </div>
-      <button
-        type="submit"
-        class="btn btn-primary"
-      >
-        Registrar
-      </button>
-      <button type="submit"
-        class="btn btn-danger"
-        routerLink="/login"
-      >
+      <div class="form-group">
+        <label for="senha">Confirmar senha</label>
+        <input
+          [(ngModel)]="usuario.senhaUsuario"
+          type="password"
+          class="form-control"
+          id="confirmarSenha"
+          name="confirmarSenha"
+          aria-describedby="confirmarSenhaHelp"
+          placeholder="Digite novamente"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="cadastrar($event)">Registrar</button>
+      <button type="submit" class="btn btn-danger" routerLink="/login">
         Cancelar
       </button>
     </form>
