@@ -4,9 +4,11 @@
     <div class="form-group">
       <label for="email">Email</label>
       <input
+        [(ngModel)]="usuarioLogin.email"
         type="email"
         class="form-control"
         id="email"
+        name="email"
         aria-describedby="emailHelp"
         placeholder="Digite seu Email"
       />
@@ -14,13 +16,16 @@
     <div class="form-group">
       <label for="senha">Senha</label>
       <input
+        [(ngModel)]="usuarioLogin.senha"
         type="password"
         class="form-control"
         id="senha"
+        name="senha"
+        aria-describedby="senhaHelp"
         placeholder="Senha"
       />
     </div>
-    <button type="submit" class="btn btn-primary">Entrar</button>
+    <button type="submit" class="btn btn-primary" (click)="login($event)">Entrar</button>
     <hr class="my-3" />
     <p class="text-center">Não tem uma conta? <a routerLink="/cadastro">Cadastre-se Agora !!!</a></p>
   </form>
