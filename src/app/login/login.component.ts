@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         console.log(environment.token)
         console.log(environment.nome)
 
-        this.router.navigate(['/home'])
+        this.router.navigate(['/inicio'])
       },
       error: erro => {
         if(erro.status == 400){
