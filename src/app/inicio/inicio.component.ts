@@ -30,6 +30,6 @@ export class InicioComponent implements OnInit {
   }
 
     publicar(){
-
+     
     }
 }
