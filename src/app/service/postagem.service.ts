@@ -13,7 +13,7 @@ export class PostagemService {
 
   constructor(private http: HttpClient)
   { }
-  
+
   token = {
     headers: new HttpHeaders().set("Authorization" , environment.token)
   }
@@ -23,7 +23,7 @@ export class PostagemService {
       }
 
   getByIdPostagem(id: number): Observable<Postagem>{
-        return this.http.get<Postagem>(`localhost:8080/postagem/${id}`, this.token)
+        return this.http.get<Postagem>(`https://integra-ja.herokuapp.com/postagem/${id}`, this.token)
       }
 
       postPostagem(postagem: Postagem) : Observable<Postagem>{
@@ -31,10 +31,10 @@ export class PostagemService {
       }
 
   putPostagem(postagem: Postagem): Observable<Postagem>{
-        return this.http.put<Postagem>('localhost:8080/postagem',postagem, this.token)
+        return this.http.put<Postagem>('https://integra-ja.herokuapp.com/postagem',postagem, this.token)
   }
-  
+
   deletePostagem(id: number) {
-    return this.http.delete(`localhost:8080/postagem/${id}`, this.token)
+    return this.http.delete(`https://integra-ja.herokuapp.com/postagem/${id}`, this.token)
   }
 }

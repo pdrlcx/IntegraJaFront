@@ -25,6 +25,13 @@ export class TemaService {
 
   postTema(tema: Tema): Observable<Tema>{
     return this.http.post<Tema>('https://integra-ja.herokuapp.com/tema', tema, this.token)
-  }  
-  
+  }
+
+  putTema(tema: Tema): Observable<Tema>{
+    return this.http.put<Tema>('https://integra-ja.herokuapp.com/tema', tema, this.token)
+  }
+
+  deleteTema(id: number) {
+    return this.http.delete(`https://integra-ja.herokuapp.com/tema/${id}`, this.token)
+  }
 }
