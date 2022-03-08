@@ -11,7 +11,7 @@ import { AuthService } from '../service/auth.service';
 export class CadastroComponent implements OnInit {
   usuario: Usuario = new Usuario();
   confirmarSenha: string;
-  
+
   constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
@@ -22,7 +22,7 @@ export class CadastroComponent implements OnInit {
     this.confirmarSenha = event.target.value;
   }
 
-  cadastrar(event: any) {
+  cadastrar() {
     this.usuario.tipoUsuario = 'admin';
 
     if (this.usuario.senhaUsuario != this.confirmarSenha) {
