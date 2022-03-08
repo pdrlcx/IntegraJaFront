@@ -11,7 +11,7 @@ import { AuthService } from '../service/auth.service';
 export class CadastroComponent implements OnInit {
   usuario: Usuario = new Usuario();
   confirmarSenha: string;
-
+  
   constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
