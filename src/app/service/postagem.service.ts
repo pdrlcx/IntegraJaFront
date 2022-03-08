@@ -19,7 +19,7 @@ export class PostagemService {
   }
 
       getAllPostagens(): Observable<Postagem[]>{
-        return this.http.get<Postagem[]>("http://localhost:8080/postagem" , this.token)
+        return this.http.get<Postagem[]>("https://integra-ja.herokuapp.com/postagem" , this.token)
       }
 
   getByIdPostagem(id: number): Observable<Postagem>{
@@ -27,7 +27,7 @@ export class PostagemService {
       }
 
       postPostagem(postagem: Postagem) : Observable<Postagem>{
-        return this.http.post<Postagem>("http://localhost:8080/postagem" , postagem, this.token)
+        return this.http.post<Postagem>("https://integra-ja.herokuapp.com/postagem" , postagem, this.token)
       }
 
   putPostagem(postagem: Postagem): Observable<Postagem>{

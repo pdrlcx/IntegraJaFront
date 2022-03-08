@@ -8,40 +8,38 @@ import { AuthService } from '../service/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  usuarioLogin: UsuarioLogin = new UsuarioLogin();
+  usuarioCredentials: UsuarioCredentials = new UsuarioCredentials();
 
-  usuarioLogin: UsuarioLogin = new UsuarioLogin()
-  usuarioCredentials: UsuarioCredentials = new UsuarioCredentials()
-
-  constructor(
-    private auth: AuthService,
-    private router: Router
-  ) { }
+  constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0);
   }
 
-  login(event: any){
+  login(event: any) {
     this.auth.login(this.usuarioLogin).subscribe({
       next: (resp: UsuarioCredentials) => {
-        environment.token = this.usuarioCredentials.basicToken
-        environment.id = this.usuarioCredentials.id
-        environment.nome = this.usuarioCredentials.nome
-        environment.foto = this.usuarioCredentials.foto
+        this.usuarioCredentials = resp;
+        environment.token = this.usuarioCredentials.basicToken;
+        environment.id = this.usuarioCredentials.id;
+        environment.nome = this.usuarioCredentials.nome;
+        environment.foto = this.usuarioCredentials.foto;
+        environment.tipo = this.usuarioCredentials.tipo;
 
-        console.log(environment.token)
-        console.log(environment.nome)
+        console.log(environment.token);
+        console.log(environment.nome);
 
-        this.router.navigate(['/inicio'])
+        this.router.navigate(['/inicio']);
       },
-      error: erro => {
-        if(erro.status == 400){
-          alert("Usuário ou senha inválidos!")
+      error: (erro) => {
+        if (erro.status == 400) {
+          alert('Usuário ou senha inválidos!');
         }
-      }
-    })
+      },
+    });
   }
 }

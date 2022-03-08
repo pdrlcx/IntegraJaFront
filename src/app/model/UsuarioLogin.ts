@@ -1,4 +1,4 @@
-export class UsuarioLogin{
+export class UsuarioLogin {
   public email: string;
   public senha: string;
 }

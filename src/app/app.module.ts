@@ -1,25 +1,22 @@
-import {HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { HashLocationStrategy, LocationStrategy } from "@angular/common"
-
-
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
-import { ContatoComponent } from './contato/contato.component';
-
+import { FormsModule } from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
+import { HashLocationStrategy, LocationStrategy} from '@angular/common';
 import { TemaComponent } from './tema/tema.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { DeleteComponent } from './delete/delete.component';
 import { PostagemComponent } from './delete/postagem/postagem.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 
+FormsModule
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +24,6 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
     FooterComponent,
     LoginComponent,
     CadastroComponent,
-    ContatoComponent,
     InicioComponent,
     TemaComponent,
     PostagemEditComponent,
@@ -41,8 +37,8 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
     HttpClientModule,
     FormsModule
   ],
-  providers:[{
-    provide: LocationStrategy,
+  providers: [{
+    provide: LocationStrategy, 
     useClass: HashLocationStrategy
   }],
   bootstrap: [AppComponent]

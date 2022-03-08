@@ -1,84 +1,92 @@
-<div class="container vh-100 d-flex justify-content-center align-items-center">
-  <div class="p-4">
-    <form>
-      <h1>Cadastre-se</h1>
-      <div class="form-group">
-        <label for="nome">Nome</label>
-        <input
-          [(ngModel)]="usuario.nomeUsuario"
-          type="text"
-          class="form-control"
-          id="nome"
-          name="nome"
-          aria-describedby="nomeHelp"
-          placeholder="Nome"
-          required
-        />
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-md-4 mt-5 mb-5" id="img-bg"></div>
+
+    <div class="col-md-8 mt-5 mb-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+          <h1 class="text-center">Cadastro</h1>
+
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input
+              [(ngModel)]="usuario.nomeUsuario"
+              class="form-control"
+              type="text"
+              name="nome"
+              id="nome"
+              placeholder="Seu nome"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              [(ngModel)]="usuario.emailUsuario"
+              class="form-control"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Seu email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="foto">Link da foto</label>
+            <input
+              [(ngModel)]="usuario.fotoUsuario"
+              class="form-control"
+              type="text"
+              name="foto"
+              id="foto"
+              placeholder="Sua foto"
+            />
+          </div>
+          <div class="form-group">
+            <label for="telefone">telefone</label>
+            <input
+              [(ngModel)]="usuario.telefoneUsuario"
+              class="form-control"
+              type="text"
+              name="telefone"
+              id="telefone"
+              placeholder="Seu telefone"
+            />
+          </div>
+          <div class="form-group">
+            <label for="senha">Senha</label>
+            <input
+              (input)="checarSenha($event)"
+              class="form-control"
+              type="password"
+              name="senha"
+              id="senha"
+              placeholder="Sua senha"
+            />
+          </div>
+          <div class="form-group">
+            <label for="confirmSenha">Confirmar senha</label>
+            <input
+              [(ngModel)]="usuario.senhaUsuario"
+              class="form-control"
+              type="password"
+              name="confirmSenha"
+              id="confirmSenha"
+              placeholder="Confirme sua senha"
+            />
+          </div>
+          <div class="d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-danger mr-4"
+              routerLink="/entrar"
+            >
+              Cancelar
+            </button>
+            <button type="submit" class="btn btn-success" (click)="cadastrar()">
+              Cadastrar
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="telefone">Telefone</label>
-        <input
-          [(ngModel)]="usuario.telefoneUsuario"
-          type="tel"
-          class="form-control"
-          id="telefone"
-          name="telefone"
-          aria-describedby="telefoneHelp"
-          placeholder="Telefone"
-        />
-      </div>
-      <div class="form-group">
-        <label for="foto">Foto de perfil</label>
-        <input
-          [(ngModel)]="usuario.fotoUsuario"
-          type="text"
-          class="form-control"
-          id="foto"
-          name="foto"
-          aria-describedby="fotoHelp"
-          placeholder="Link da foto"
-        />
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input
-          [(ngModel)]="usuario.emailUsuario"
-          type="email"
-          class="form-control"
-          id="email"
-          name="email"
-          aria-describedby="emailHelp"
-          placeholder="Digite seu Email"
-        />
-      </div>
-      <div class="form-group">
-        <label for="senha">Senha</label>
-        <input
-          (input)="checarSenha($event)"
-          type="password"
-          class="form-control"
-          id="senha"
-          name="senha"
-          aria-describedby="senhaHelp"
-          placeholder="Senha"
-        />
-      </div>
-      <div class="form-group">
-        <label for="senha">Confirmar senha</label>
-        <input
-          [(ngModel)]="usuario.senhaUsuario"
-          type="password"
-          class="form-control"
-          id="confirmarSenha"
-          name="confirmarSenha"
-          aria-describedby="confirmarSenhaHelp"
-          placeholder="Digite novamente"
-        />
-      </div>
-      <button type="submit" class="btn btn-primary" (click)="cadastrar($event)">Registrar</button>
-      <button type="submit" class="btn btn-danger" routerLink="/login">
-        Cancelar
-      </button>
-    </form>
+    </div>
   </div>
 </div>
