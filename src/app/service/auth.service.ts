@@ -16,11 +16,11 @@ export class AuthService {
   ) { }
 
   login(usuarioLogin: UsuarioLogin): Observable<UsuarioCredentials> {
-    return this.http.post<UsuarioCredentials>('http://localhost:8080/usuarios/logar', usuarioLogin)
+    return this.http.post<UsuarioCredentials>('https://integra-ja.herokuapp.com/usuarios/logar', usuarioLogin)
   }
 
   cadastrar(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>('http://localhost:8080/usuarios/cadastrar', usuario);
+    return this.http.post<Usuario>('https://integra-ja.herokuapp.com/usuarios/cadastrar', usuario);
   }
 
   logado(){

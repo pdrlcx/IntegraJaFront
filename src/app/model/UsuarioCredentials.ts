@@ -4,4 +4,5 @@ export class UsuarioCredentials{
   public nome: string
   public email: string
   public foto: string
+  public tipo: string
 }
