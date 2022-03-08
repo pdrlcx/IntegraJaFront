@@ -6,40 +6,33 @@ import { AuthService } from '../service/auth.service';
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css']
+  styleUrls: ['./cadastro.component.css'],
 })
 export class CadastroComponent implements OnInit {
-
-  Usuario: Usuario = new Usuario
-  confirmarSenha: string
-  tipoUser: string
-
-  constructor(private authService: AuthService, private router: Router) { }
+  usuario: Usuario = new Usuario();
+  confirmarSenha: string;
+  
+  constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
-    window.scroll(0,0)    
+    window.scroll(0, 0);
   }
 
-  confirmeSenha(event: any){
-    this.confirmarSenha = event.target.value
+  checarSenha(event: any) {
+    this.confirmarSenha = event.target.value;
   }
 
-  tipoUsuario(event: any){
-    this.tipoUser = event.target.value
-  }
+  cadastrar(event: any) {
+    this.usuario.tipoUsuario = 'admin';
 
-  cadastrar() {
-    this.Usuario.tipoUsuario = this.tipoUser
-
-    if(this.Usuario.senhaUsuario != this.confirmarSenha){
-      alert('As senhas estão incorretas.')
-      
-    }
-    else{
-     this.authService.cadastrar(this.Usuario).subscribe((resp:Usuario) => {this.Usuario = resp})
-     this.router.navigate(['/login'])
-     alert("Usuario cadastrado com sucesso")      
+    if (this.usuario.senhaUsuario != this.confirmarSenha) {
+      alert('As senhas são diferentes!');
+    } else {
+      this.auth.cadastrar(this.usuario).subscribe((resp: Usuario) => {
+        this.usuario = resp;
+        this.router.navigate(['/login']);
+        alert('Usuário cadastrado com sucesso!');
+      });
     }
   }
-
 }
