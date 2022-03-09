@@ -30,9 +30,6 @@ export class LoginComponent implements OnInit {
         environment.foto = this.usuarioCredentials.foto;
         environment.tipo = this.usuarioCredentials.tipo;
 
-        console.log(environment.token);
-        console.log(environment.nome);
-
         this.router.navigate(['/inicio']);
       },
       error: (erro) => {
