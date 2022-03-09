@@ -19,7 +19,7 @@ export class EditPostagemComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    window.scroll(0, 0);
+    window.scroll(0,0);
 
     if (environment.token == '') {
       this.router.navigate(['/login']);
