@@ -11,12 +11,13 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { FormsModule } from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { TemaComponent } from './tema/tema.component';
+
 import { DeletePostagemComponent } from './delete/delete-postagem/delete-postagem.component';
 import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.component';
 import { EditTemaComponent } from './edit/edit-tema/edit-tema.component';
 import { DeleteTemaComponent } from './delete/delete-tema/delete-tema.component';
 import { EditUsuarioComponent } from './edit/edit-usuario/edit-usuario.component';
+import { TemaComponent } from './tema/tema.component';
 
 FormsModule;
 @NgModule({
