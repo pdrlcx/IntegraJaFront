@@ -82,6 +82,14 @@ export class InicioComponent implements OnInit {
     });
   }
 
+  postTemImg(imagem: string) {
+    let tem = false;
+    if (imagem != undefined) {
+      tem = true;
+    }
+    return tem;
+  }
+
   findByTituloPostagem() {
     if (this.tituloPost == '') {
       this.getAllPostagens();

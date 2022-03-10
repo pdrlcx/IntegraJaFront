@@ -9,6 +9,7 @@ import { componentFactoryName } from '@angular/compiler';
 import { DeletePostagemComponent } from './delete/delete-postagem/delete-postagem.component';
 import { DeleteTemaComponent } from './delete/delete-tema/delete-tema.component';
 import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.component';
+import { EditUsuarioComponent } from './edit/edit-usuario/edit-usuario.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'delete-tema/:id', component: DeleteTemaComponent },
   { path: 'edit-postagem/:id', component: EditPostagemComponent },
   { path: 'delete-postagem/:id', component: DeletePostagemComponent },
+  { path: 'edit-usuario/:id', component: EditUsuarioComponent },
 ];
 
 @NgModule({

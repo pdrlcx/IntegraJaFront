@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { OrderModule } from 'ngx-order-pipe';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
@@ -15,6 +16,7 @@ import { DeletePostagemComponent } from './delete/delete-postagem/delete-postage
 import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.component';
 import { EditTemaComponent } from './edit/edit-tema/edit-tema.component';
 import { DeleteTemaComponent } from './delete/delete-tema/delete-tema.component';
+import { EditUsuarioComponent } from './edit/edit-usuario/edit-usuario.component';
 
 FormsModule;
 @NgModule({
@@ -30,8 +32,15 @@ FormsModule;
     EditPostagemComponent,
     EditTemaComponent,
     DeleteTemaComponent,
+    EditUsuarioComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    OrderModule,
+  ],
   providers: [
     {
       provide: LocationStrategy,
