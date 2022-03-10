@@ -17,8 +17,8 @@
           >
             Nova Postagem
           </button>
-          <a class="btn btn-outline-light ms-2" href="#postagens"
-            >Ver postagem</a
+          <a class="btn btn-outline-light ml-2" href="#postagens"
+            >Ver postagens</a
           >
         </div>
       </div>
@@ -67,7 +67,7 @@
         role="tab"
         aria-controls="nav-temas"
         aria-selected="false"
-        >Contact</a
+        >Postagens por tema</a
       >
     </div>
   </nav>
@@ -95,12 +95,21 @@
       </div>
 
       <div class="card-columns">
-        <div class="card text-center" *ngFor="let item of listaPostagens">
+        <div
+          class="card text-center"
+          *ngFor="let item of listaPostagens | orderBy: key:reverse"
+        >
           <div class="card-body">
             <h5 class="card-title m-0">{{ item.tituloPost }}</h5>
             <small class="text-muted">Tema: {{ item.tema.descTema }}</small>
 
             <p class="card-text mt-3">{{ item.textoPost }}</p>
+            <img
+              *ngIf="postTemImg(item.imagemPost)"
+              class="img-post"
+              src="{{ item.imagemPost }}"
+              alt="Imagem do post"
+            />
             <p class="card-text">
               <small class="text-muted">
                 {{ item.dataPost | date: "dd/MM/yyyy" }} às
@@ -131,12 +140,21 @@
       aria-labelledby="nav-minhas-tab"
     >
       <div class="card-columns">
-        <div class="card text-center" *ngFor="let item of usuario.postagens">
+        <div
+          class="card text-center"
+          *ngFor="let item of usuario.postagens | orderBy: key:reverse"
+        >
           <div class="card-body">
             <h5 class="card-title m-0">{{ item.tituloPost }}</h5>
             <small class="text-muted">Tema: {{ item.tema.descTema }}</small>
             <!-- mostrando tema -->
             <p class="card-text mt-3">{{ item.textoPost }}</p>
+            <img
+              *ngIf="postTemImg(item.imagemPost)"
+              class="img-post"
+              src="{{ item.imagemPost }}"
+              alt=""
+            />
             <p class="card-text">
               <small class="text-muted">
                 <!-- modificando data e hora -->
@@ -198,10 +216,19 @@
         </div>
       </div>
       <div class="card-columns" *ngFor="let tema of listaTemas">
-        <div class="card text-center" *ngFor="let item of tema.postagens">
+        <div
+          class="card text-center"
+          *ngFor="let item of tema.postagens | orderBy: key:reverse"
+        >
           <div class="card-body">
             <h5 class="card-title m-0">{{ item.tituloPost }}</h5>
             <p class="card-text mt-3">{{ item.textoPost }}</p>
+            <img
+              *ngIf="postTemImg(item.imagemPost)"
+              class="img-post"
+              src="{{ item.imagemPost }}"
+              alt=""
+            />
             <p class="card-text">
               <small class="text-muted">
                 <!-- modificando data e hora -->
@@ -272,6 +299,18 @@
             id="texto"
             rows="3"
           ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="imagem">Imagem</label>
+          <input
+            [(ngModel)]="postagem.imagemPost"
+            type="text"
+            class="form-control"
+            id="imagem"
+            name="imagem"
+            placeholder="Link da imagem"
+          />
         </div>
 
         <div class="form-group">

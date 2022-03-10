@@ -36,6 +36,14 @@ export class AuthService {
     );
   }
 
+  atualizarUsuario(usuario: Usuario): Observable<Usuario> {
+    return this.http.put<Usuario>(
+      'https://integra-ja.herokuapp.com/usuarios',
+      usuario,
+      this.token
+    );
+  }
+
   getByIdUsuario(id: number): Observable<Usuario> {
     return this.http.get<Usuario>(
       `https://integra-ja.herokuapp.com/usuarios/${id}`,
