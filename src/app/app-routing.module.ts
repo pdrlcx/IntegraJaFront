@@ -10,6 +10,7 @@ import { DeletePostagemComponent } from './delete/delete-postagem/delete-postage
 import { DeleteTemaComponent } from './delete/delete-tema/delete-tema.component';
 import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.component';
 import { EditUsuarioComponent } from './edit/edit-usuario/edit-usuario.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
   { path: 'login', component: LoginComponent },
   { path: 'tema', component: TemaComponent },
+  { path: 'landing', component: LandingPageComponent},
 
   { path: 'edit-tema/:id', component: EditTemaComponent },
   { path: 'delete-tema/:id', component: DeleteTemaComponent },
