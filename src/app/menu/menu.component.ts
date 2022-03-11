@@ -9,10 +9,6 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  nome = environment.nome;
-  foto = environment.foto;
-  id = environment.id;
-
   constructor(private router: Router, public auth: AuthService) {}
 
   ngOnInit() {}

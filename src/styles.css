@@ -1,13 +1,14 @@
-html{
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto+Condensed:wght@300;400&display=swap");
+
+html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
-.fs-54{
-    font-size: 54pt
+.fs-54 {
+  font-size: 54pt;
 }
 
-.fs-18{
-font-size: 18;
-
+.fs-18 {
+  font-size: 18;
 }

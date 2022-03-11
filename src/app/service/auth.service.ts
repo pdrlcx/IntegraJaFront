@@ -12,6 +12,10 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
 export class AuthService {
   constructor(private http: HttpClient) {}
 
+  foto: string;
+  nome: string;
+  id: number;
+
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token),
   };
@@ -49,6 +53,12 @@ export class AuthService {
       `https://integra-ja.herokuapp.com/usuarios/${id}`,
       this.token
     );
+  }
+
+  getUsuarioInfo() {
+    this.foto = environment.foto;
+    this.id = environment.id;
+    this.nome = environment.nome;
   }
 
   logado() {
