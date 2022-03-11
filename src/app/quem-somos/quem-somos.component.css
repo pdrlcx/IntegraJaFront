@@ -1,0 +1,31 @@
+p {
+    font-size: large;
+    font-family: sans-serif;    
+    font: bolder;
+}
+
+.fa {
+    font-size: 25pt;    
+}
+
+.carousel-control-prev-icon {
+    background-color: black;
+}
+
+.carousel-control-next-icon {
+     background-color: black;
+}
+
+.card-footer {
+    justify-content: space-evenly;
+}
+
+.card-img-top3 {
+    width: 150px;
+    height: 120px;
+}
+
+.jumbotron {
+    border-radius: 10%;
+}
+

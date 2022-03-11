@@ -17,6 +17,7 @@ import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.compon
 import { EditTemaComponent } from './edit/edit-tema/edit-tema.component';
 import { DeleteTemaComponent } from './delete/delete-tema/delete-tema.component';
 import { EditUsuarioComponent } from './edit/edit-usuario/edit-usuario.component';
+import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { TemaComponent } from './tema/tema.component';
 
 FormsModule;
@@ -34,6 +35,7 @@ FormsModule;
     EditTemaComponent,
     DeleteTemaComponent,
     EditUsuarioComponent,
+    QuemSomosComponent,
   ],
   imports: [
     BrowserModule,
