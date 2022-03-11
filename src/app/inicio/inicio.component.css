@@ -1,3 +1,16 @@
 .img-post {
   max-width: 100%;
 }
+
+.nav-pills .nav-link:not(.active) {
+  background-color: #fff;
+}
+
+.nav-pills .nav-link {
+  background-color: #8c52ff;
+}
+
+.btn-roxo {
+  background-color: #8c52ff !important;
+  color: white;
+}

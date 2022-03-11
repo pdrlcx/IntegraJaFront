@@ -42,6 +42,7 @@ export class InicioComponent implements OnInit {
       this.router.navigate(['/login']);
     }
     this.auth.refreshToken();
+    this.findByIdUsuario();
     this.getAllTemas();
     this.getAllPostagens();
   }
@@ -117,6 +118,7 @@ export class InicioComponent implements OnInit {
         this.postagem = resp;
         alert('Postagem realizada com sucesso!');
         this.postagem = new Postagem();
+        this.getAllPostagens();
       });
   }
 }
