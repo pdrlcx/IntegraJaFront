@@ -1,5 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light ml-2">
-  <a class="navbar-brand" [routerLink]="['/inicio']"><img src="../../favicon.ico" alt=""> IntegraJá </a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]="['/landing']"
+    ><img
+      class="mx-3"
+      src="../../favicon.ico"
+      alt="Logotipo Integra Já"
+    />IntegraJá
+  </a>
 
   <button
     class="navbar-toggler"
@@ -14,21 +20,29 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ml-3 mr-auto">
+      <li class="nav-item active" *ngIf="auth.logado()">
+        <a class="nav-link" [routerLink]="['/inicio']"
+          >Feed<span class="sr-only">(current)</span></a
+        >
+      </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/quem-somos"
+        <a class="nav-link" [routerLink]="['/quem-somos']"
           >Quem Somos<span class="sr-only">(current)</span></a
         >
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/contato"
+        <a class="nav-link" [routerLink]="['/contato']"
           >Contato<span class="sr-only">(current)</span></a
         >
       </li>
     </ul>
-    
-    <span>{{ nome }}</span>
-    <div class="nav-item dropdown" *ngIf='auth.logado()'>
+
+    <a *ngIf="auth.logado() == false" class="nav-link" [routerLink]="['/login']"
+      >Entrar</a
+    >
+
+    <div class="nav-item dropdown" *ngIf="auth.logado()">
       <a
         class="nav-link rounded-circle"
         href="#"
@@ -38,7 +52,7 @@
         aria-expanded="false"
       >
         <img
-          src="{{ foto }}"
+          src="{{ auth.foto }}"
           alt="avatar"
           width="50px"
           height="50px"
@@ -49,13 +63,13 @@
         class="dropdown-menu px-1 dropdown-menu-right"
         aria-labelledby="navbarDropdown"
       >
-        <a class="dropdown-item disabled" href="#">
+        <a class="dropdown-item disabled">
           <p>
-            {{ nome }}
+            {{ auth.nome }}
           </p>
         </a>
         <a
-          [routerLink]="['/edit-usuario', id]"
+          [routerLink]="['/edit-usuario', auth.id]"
           class="dropdown-item d-flex justify-content-between align-items-center"
           ><span>Editar perfil</span
           ><i class="fa fa-user" aria-hidden="true"></i>
@@ -69,5 +83,5 @@
         </a>
       </div>
     </div>
-  </div>  
+  </div>
 </nav>

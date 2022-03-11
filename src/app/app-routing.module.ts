@@ -15,14 +15,14 @@ import { ContatoComponent } from './contato/contato.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'landing', pathMatch: 'full' },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'inicio', component: InicioComponent },
   { path: 'login', component: LoginComponent },
   { path: 'tema', component: TemaComponent },
-  { path: 'landing', component: LandingPageComponent},
-  { path: 'contato', component: ContatoComponent},
-  { path: 'quem-somos', component: QuemSomosComponent},
+  { path: 'landing', component: LandingPageComponent },
+  { path: 'contato', component: ContatoComponent },
+  { path: 'quem-somos', component: QuemSomosComponent },
 
   { path: 'edit-tema/:id', component: EditTemaComponent },
   { path: 'delete-tema/:id', component: DeleteTemaComponent },

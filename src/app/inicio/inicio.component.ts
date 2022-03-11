@@ -42,6 +42,7 @@ export class InicioComponent implements OnInit {
       this.router.navigate(['/login']);
     }
     this.auth.refreshToken();
+    this.auth.getUsuarioInfo();
     this.findByIdUsuario();
     this.getAllTemas();
     this.getAllPostagens();
