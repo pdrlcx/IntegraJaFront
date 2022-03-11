@@ -10,6 +10,7 @@ import { DeletePostagemComponent } from './delete/delete-postagem/delete-postage
 import { DeleteTemaComponent } from './delete/delete-tema/delete-tema.component';
 import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.component';
 import { EditUsuarioComponent } from './edit/edit-usuario/edit-usuario.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ContatoComponent } from './contato/contato.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 
@@ -19,8 +20,9 @@ const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
   { path: 'login', component: LoginComponent },
   { path: 'tema', component: TemaComponent },
-  {path: 'contato', component: ContatoComponent},
-  {path: 'quem-somos', component: QuemSomosComponent},
+  { path: 'landing', component: LandingPageComponent},
+  { path: 'contato', component: ContatoComponent},
+  { path: 'quem-somos', component: QuemSomosComponent},
 
   { path: 'edit-tema/:id', component: EditTemaComponent },
   { path: 'delete-tema/:id', component: DeleteTemaComponent },
