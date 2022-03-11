@@ -1,7 +1,7 @@
 html{
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
-
 
 .fs-54{
     font-size: 54pt
