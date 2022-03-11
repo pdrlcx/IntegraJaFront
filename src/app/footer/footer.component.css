@@ -15,6 +15,27 @@ padding: 5px;
     padding: 10px;
 }
 
-.fa-github-square:hover{
-    color:#24292F
+.fa-linkedin:hover {
+    color: rgb(37, 37, 255);
+}
+
+.fa-github:hover {
+    color: white;
+}
+
+.fa-instagram:hover {
+    color: rgb(190, 76, 0)
+}
+
+.fa-facebook:hover {
+    color: rgb(37, 37, 255);
+}
+
+.fa-youtube:hover {
+    color: rgb(206, 5, 5);
+}
+
+footer {
+    background: rgb(168,73,203);
+    background: linear-gradient(22deg, rgba(168,73,203,1) 0%, rgba(240,203,239,1) 100%);     
 }
