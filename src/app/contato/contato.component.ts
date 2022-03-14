@@ -13,4 +13,8 @@ export class ContatoComponent implements OnInit {
   ngOnInit() {
   }
 
+  mensagem() {
+    alert("Mensagem Enviada com Sucesso")
+  }
+
 }
