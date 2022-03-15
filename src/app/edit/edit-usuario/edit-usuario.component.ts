@@ -43,7 +43,7 @@ export class EditUsuarioComponent implements OnInit {
   }
 
   atualizar() {
-    if (this.usuario.senhaUsuario != this.confirmarSenha) {
+    if (this.usuario.senha != this.confirmarSenha) {
       alert('As senhas não conferem!');
     } else {
       this.authService

@@ -108,7 +108,7 @@ export class InicioComponent implements OnInit {
     this.tema.idTema = this.idTema;
     this.postagem.tema = this.tema;
 
-    this.usuario.idUsuario = this.idUsuario;
+    this.usuario.id = this.idUsuario;
     this.postagem.usuario = this.usuario;
 
     this.postagem.likesPost = 0;
