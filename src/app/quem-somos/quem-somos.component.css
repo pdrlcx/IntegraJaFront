@@ -26,6 +26,44 @@ p {
 }
 
 .jumbotron {
-    border-radius: 10%;
+    border-radius: 50%;    
 }
+
+.valor1 {
+    color: #5818d6;
+}
+
+.valor2 {
+    color: #99e2ff;
+}
+
+.valor3 {
+    color: #ff66c4;
+}
+
+.valor4 {
+    color: #f0ff99;
+}
+
+span {
+    font-size: 20pt;            
+}
+
+#img-bg {
+  background-image: url(https://i.imgur.com/66VOWeS.png);  
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+ul {
+    margin-left: 50pt;
+}
+
+
+
+
+
+
+
+
 
