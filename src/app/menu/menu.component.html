@@ -42,6 +42,10 @@
       >Entrar</a
     >
 
+    <a *ngIf="auth.logado() == false" class="nav-link" [routerLink]="['/cadastro']"
+      >Cadastre-se</a
+    >
+
     <div class="nav-item dropdown" *ngIf="auth.logado()">
       <a
         class="nav-link rounded-circle"

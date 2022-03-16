@@ -1,80 +1,86 @@
 <div class="container-fluid">
   <div class="row align-items-center">
-    <div class="col-md-6 mt-5 mb-5" id="img-bg"></div>
-
-    <div class="col-md-5 mt-5 mb-5">
-      <div class="row d-flex justify-content-center">
+    <div class="col-md-5 d-flex ml-5" id="img-bg"></div>
+    <div class="col-md-5 d-flex justify-content-center align-items-center">
+      <div class="row d-flex align-items-center justify-content-center cadastro-box ml-5 mt-3">
         <div class="col-md-10">
           <h1 class="text-center">Cadastro</h1>
-
-          <div class="form-group">
-            <label for="nome">Nome</label>
+          <div class="form-group user-box">
             <input
-              [(ngModel)]="usuario.nomeUsuario"
+              [(ngModel)]="usuario.nome"
               class="form-control"
               type="text"
+              required=""
               name="nome"
               id="nome"
-              placeholder="Seu nome"
+              aria-describedby="nomeHelp"
             />
+            <label for="nome">Nome</label>
           </div>
-          <div class="form-group">
-            <label for="email">Email</label>
+          <div class="form-group user-box">
             <input
-              [(ngModel)]="usuario.emailUsuario"
-              class="form-control"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Seu email"
-            />
-          </div>
-          <div class="form-group">
-            <label for="foto">Link da foto</label>
-            <input
-              [(ngModel)]="usuario.fotoUsuario"
+              [(ngModel)]="usuario.email"
               class="form-control"
               type="text"
-              name="foto"
-              id="foto"
-              placeholder="Sua foto"
+              name="email"
+              required=""
+              id="email"
+              aria-describedby="emailHelp"
             />
+            <label for="email">E-mail</label>
+          </div>
+          <div class="form-group user-box">
+            <input
+            [(ngModel)]="usuario.foto"
+            class="form-control"
+            type="text"
+            name="foto"
+            required=""
+            id="foto"
+            aria-describedby="linkDaFotoHelp"
+            />
+            <label for="foto">Link da foto</label>
           </div>
           <div class="form-group">
-            <label for="telefone">telefone</label>
-            <input
-              [(ngModel)]="usuario.telefoneUsuario"
+            <div class="form-group user-box">
+              <input
+              [(ngModel)]="usuario.telefone"
               class="form-control"
               type="text"
               name="telefone"
+              required=""
               id="telefone"
-              placeholder="Seu telefone"
-            />
-          </div>
-          <div class="form-group">
-            <label for="senha">Senha</label>
-            <input
+              aria-describedby="telefoneHelp"
+              />
+              <label for="telefone">Telefone</label>
+            </div>
+            <div class="form-group user-box">
+              <input
               (input)="checarSenha($event)"
               class="form-control"
               type="password"
               name="senha"
+              required=""
               id="senha"
-              placeholder="Sua senha"
-            />
+              aria-describedby="senhaHelp"
+              />
+              <label for="senha">Senha</label>
           </div>
-          <div class="form-group">
-            <label for="confirmSenha">Confirmar senha</label>
+          <div class="form-group user-box">
             <input
-              [(ngModel)]="usuario.senhaUsuario"
-              class="form-control"
-              type="password"
-              name="confirmSenha"
-              id="confirmSenha"
-              placeholder="Confirme sua senha"
+            [(ngModel)]="usuario.senha"
+            class="form-control"
+            type="password"
+            name="confirmSenha"
+            required=""
+            id="confirmSenha"
+            aria-describedby="confirmarSenhaHelp"
             />
+            <label for="confirmSenha">Confirmar senha</label>
           </div>
-          <div class="d-flex justify-content-center">
+          <div class="d-flex justify-content-center mt-4">
             <button type="submit" class="btn btn-success mr-5" (click)="cadastrar()">
+
               Cadastrar
             </button>
             <button
@@ -82,6 +88,7 @@
               class="btn btn-danger"
               routerLink="/login"
             >
+
               Cancelar
             </button>
           </div>

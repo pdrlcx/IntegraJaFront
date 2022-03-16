@@ -1,87 +1,172 @@
-<div class="container mt-4 mb-4">
-  <div class="row">
-    <div class="col-md-12">
-      <h1 class="text-center text-secondary">Atualizar meu Usuário</h1>
-    </div>
+<div class="modal-content">
+  <div class="modal-header">
+    <h2 class="modal-title" id="editUserModalLabel">Editar Perfil</h2>
+    <button
+      type="button"
+      class="close"
+      (click)="modalRef.hide()"
+      aria-label="Close"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
-
-  <div class="row d-flex justify-content-center">
-    <div class="col-md-10">
-      <div class="form-group">
-        <label for="nome">Nome</label>
-        <input
-          [(ngModel)]="usuario.nomeUsuario"
-          class="form-control"
-          type="text"
-          name="nome"
-          id="nome"
-          placeholder="Seu nome"
-        />
+  <div class="modal-body d-flex justify-content-center">
+    <form class="d-flex">
+      <div class="form-block">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input
+            [(ngModel)]="usuario.nome"
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            aria-describedby="nomeHelp"
+            placeholder="Nome"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="username">E-mail</label>
+          <input
+            [(ngModel)]="usuario.email"
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            aria-describedby="emailHelp"
+            placeholder="E-mail"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="picture">Telefone</label>
+          <input
+            [(ngModel)]="usuario.telefone"
+            type="text"
+            class="form-control"
+            id="telefone"
+            name="telefone"
+            aria-describedby="telefoneHelp"
+            placeholder="Telefone"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="picture">Foto de perfil</label>
+          <input
+            [(ngModel)]="usuario.foto"
+            type="text"
+            class="form-control"
+            id="foto"
+            name="foto"
+            aria-describedby="fotoHelp"
+            placeholder="Foto de perfil"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="picture">Cidade</label>
+          <input
+            [(ngModel)]="usuario.cidade"
+            type="text"
+            class="form-control"
+            id="cidade"
+            name="cidade"
+            aria-describedby="cidadeHelp"
+            placeholder="Cidade"
+            required
+          />
+        </div>
       </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input
-          [(ngModel)]="usuario.emailUsuario"
-          class="form-control"
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Seu email"
-        />
+      <div class="form-block">
+        <div class="form-group">
+          <label for="picture">Área de atuação</label>
+          <input
+            [(ngModel)]="usuario.areaDeAtuacao"
+            type="text"
+            class="form-control"
+            id="areaDeAtuacao"
+            name="areaDeAtuacao"
+            aria-describedby="areaDeAtuacaoHelp"
+            placeholder="Área de atuação"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="picture">Formação</label>
+          <input
+            [(ngModel)]="usuario.formacao"
+            type="text"
+            class="form-control"
+            id="formacao"
+            name="formacao"
+            aria-describedby="formacaoHelp"
+            placeholder="Formação"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="picture">Idiomas</label>
+          <input
+            [(ngModel)]="usuario.idiomas"
+            type="text"
+            class="form-control"
+            id="idiomas"
+            name="idiomas"
+            aria-describedby="idiomasHelp"
+            placeholder="Idiomas"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="picture">Certificados</label>
+          <input
+            [(ngModel)]="usuario.certificados"
+            type="text"
+            class="form-control"
+            id="certificados"
+            name="certificados"
+            aria-describedby="certificadosHelp"
+            placeholder="Certificados"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="picture">LinkedIn</label>
+          <input
+            [(ngModel)]="usuario.linkedin"
+            type="text"
+            class="form-control"
+            id="linkedin"
+            name="linkedin"
+            aria-describedby="linkedinHelp"
+            placeholder="LinkedIn"
+            required
+          />
+        </div>
       </div>
-      <div class="form-group">
-        <label for="foto">Link da foto</label>
-        <input
-          [(ngModel)]="usuario.fotoUsuario"
-          class="form-control"
-          type="text"
-          name="foto"
-          id="foto"
-          placeholder="Sua foto"
-        />
+      <div class="form-block">
+        <div class="form-group">
+          <label for="biography">Biografia</label>
+          <textarea
+            [(ngModel)]="usuario.biografia"
+            class="form-control"
+            name="biografia"
+            id="biografia"
+            rows="5"
+            placeholder="Escreva uma breve apresentação"
+          ></textarea>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="telefone">telefone</label>
-        <input
-          [(ngModel)]="usuario.telefoneUsuario"
-          class="form-control"
-          type="text"
-          name="telefone"
-          id="telefone"
-          placeholder="Seu telefone"
-        />
-      </div>
-      <div class="form-group">
-        <label for="senha">Senha</label>
-        <input
-          (input)="confirmSenha($event)"
-          class="form-control"
-          type="password"
-          name="senha"
-          id="senha"
-          placeholder="Sua senha"
-        />
-      </div>
-      <div class="form-group">
-        <label for="confirmSenha">Confirmar senha</label>
-        <input
-          [(ngModel)]="usuario.senhaUsuario"
-          class="form-control"
-          type="password"
-          name="confirmSenha"
-          id="confirmSenha"
-          placeholder="Confirme sua senha"
-        />
-      </div>
-      <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-danger mr-4" routerLink="/inicio">
-          Cancelar
-        </button>
-
-        <button type="submit" class="btn btn-success" (click)="atualizar()">
-          Atualizar
-        </button>
-      </div>
-    </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modalRef.hide()">
+      Cancelar
+    </button>
+    <button (click)="atualizar()" type="button" class="btn btn-primary">
+      Salvar
+    </button>
   </div>
 </div>

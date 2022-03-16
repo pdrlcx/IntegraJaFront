@@ -23,15 +23,15 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastrar() {
-    this.usuario.tipoUsuario = 'admin';
+    this.usuario.tipo = 'admin';
 
-    if (this.usuario.senhaUsuario != this.confirmarSenha) {
-      alert('As senhas são diferentes!');
+    if (this.usuario.senha != this.confirmarSenha) {
+      alert('A senha está incorreta!');
     } else {
       this.auth.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
-        this.router.navigate(['/login']);
         alert('Usuário cadastrado com sucesso!');
+        this.router.navigate(['/login']);
       });
     }
   }

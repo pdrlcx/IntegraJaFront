@@ -11,6 +11,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { FormsModule } from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { DeletePostagemComponent } from './delete/delete-postagem/delete-postagem.component';
 import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.component';
@@ -19,6 +20,8 @@ import { DeleteTemaComponent } from './delete/delete-tema/delete-tema.component'
 import { EditUsuarioComponent } from './edit/edit-usuario/edit-usuario.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { TemaComponent } from './tema/tema.component';
+import { ObrigadoComponent } from './obrigado/obrigado.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 FormsModule;
 @NgModule({
@@ -36,6 +39,8 @@ FormsModule;
     DeleteTemaComponent,
     EditUsuarioComponent,
     QuemSomosComponent,
+    ObrigadoComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +48,7 @@ FormsModule;
     HttpClientModule,
     FormsModule,
     OrderModule,
+    ModalModule.forRoot(),
   ],
   providers: [
     {
