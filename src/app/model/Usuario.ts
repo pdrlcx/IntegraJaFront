@@ -7,7 +7,7 @@ export class Usuario {
   public email: string;
   public senha: string;
   public foto: string;
-  public tipoUsuario: string;
+  public tipo: string;
   public biografia: string;
   public cidade: string;
   public formacao: string;

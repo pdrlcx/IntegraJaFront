@@ -15,7 +15,7 @@ export class CadastroComponent implements OnInit {
   constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
-    window.scroll(0, 0);
+    window.scroll(0,0);
   }
 
   checarSenha(event: any) {
@@ -23,15 +23,22 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastrar() {
-    this.usuario.tipoUsuario = 'admin';
+      this.usuario.tipo = 'Admin';
+      this.usuario.cidade = 'Não informado'
+      this.usuario.idiomas = 'Não informado'
+      this.usuario.formacao = 'Não informado'
+      this.usuario.linkedin = 'Não informado'
+      this.usuario.biografia = 'Não informado'
+      this.usuario.certificado = 'Não informado'
+      this.usuario.areaDeAtuacao = 'Não informado'
 
     if (this.usuario.senha != this.confirmarSenha) {
-      alert('As senhas são diferentes!');
+      alert('A senha está incorreta!');
     } else {
       this.auth.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
-        this.router.navigate(['/login']);
         alert('Usuário cadastrado com sucesso!');
+        this.router.navigate(['/login']);
       });
     }
   }
