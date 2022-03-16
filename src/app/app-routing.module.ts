@@ -14,6 +14,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ContatoComponent } from './contato/contato.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { ObrigadoComponent } from './obrigado/obrigado.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'landing', component: LandingPageComponent },
   { path: 'contato', component: ContatoComponent },
   { path: 'quem-somos', component: QuemSomosComponent },
-  { path: 'obrigado', component:ObrigadoComponent},
+  { path: 'obrigado', component: ObrigadoComponent },
+  { path: 'perfil/:id', component: PerfilComponent },
 
   { path: 'edit-tema/:id', component: EditTemaComponent },
   { path: 'delete-tema/:id', component: DeleteTemaComponent },
