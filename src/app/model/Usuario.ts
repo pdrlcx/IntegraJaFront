@@ -13,7 +13,7 @@ export class Usuario {
   public formacao: string;
   public areaDeAtuacao: string;
   public idiomas: string;
-  public certificado: string;
+  public certificados: string;
   public linkedin: string;
   public postagens: Postagem[];
 }

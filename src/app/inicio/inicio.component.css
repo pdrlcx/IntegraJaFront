@@ -2,8 +2,20 @@
   max-width: 100%;
 }
 
+.nav-pills .nav-link {
+  transition: 200ms;
+  background-color: #8c52ff;
+}
+
 .nav-pills .nav-link:not(.active) {
   background-color: #fff;
+  border: 2px solid #8c52ff;
+  color: #8c52ff;
+}
+
+.nav-pills .nav-link:not(.active):hover {
+  background-color: #8c52ff;
+  color: #fff;
 }
 
 .nav-pills .nav-link {
@@ -12,5 +24,11 @@
 
 .btn-roxo {
   background-color: #8c52ff !important;
-  color: white;
+  color: white !important;
+}
+
+.btn-roxo:hover {
+  background-color: #fff !important;
+  border: 2px solid #8c52ff !important;
+  color: #8c52ff !important;
 }
