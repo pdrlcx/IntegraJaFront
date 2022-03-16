@@ -10,12 +10,13 @@ import { TemaService } from '../service/tema.service';
   styleUrls: ['./tema.component.css'],
 })
 export class TemaComponent implements OnInit {
+
   tema: Tema = new Tema();
   listaTemas: Tema[];
 
   key = 'idTema';
 
-  constructor(private router: Router, private temaService: TemaService) {}
+  constructor(private router: Router, private temaService: TemaService) { }
 
   ngOnInit() {
     if (environment.token == '') {
@@ -33,10 +34,10 @@ export class TemaComponent implements OnInit {
 
   cadastrar() {
     this.temaService.postTema(this.tema).subscribe((resp: Tema) => {
-      this.tema = resp;
-      alert('Tema cadastrado com sucesso !!!');
-      this.findAllTemas();
-      this.tema = new Tema();
-    });
+      this.tema = resp
+      alert('Tema cadastrado com sucesso !!!')
+      this.findAllTemas()
+      this.tema = new Tema()
+    })
   }
 }
