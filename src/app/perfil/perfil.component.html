@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row d-flex align-items-start p-5">
+    <div class="col-md-3 text-center p-4 rounded">
+      <div class="d-flex justify-content-center">
+        <img
+          src="{{ usuario.foto }}"
+          alt="avatar"
+          width="250px"
+          height="250px"
+          class="rounded-circle"
+        />
+      </div>
+      <nav class="nav nav-pills flex-column">
+        <a class="nav-link active mt-2" href="#">Editar Perfil</a>
+        <a class="nav-link active mt-2" href="#">Link</a>
+        <a class="nav-link active mt-2" href="#">Link</a>
+        <a class="nav-link active mt-2">Disabled</a>
+      </nav>
+    </div>
+    <div class="col-md-8 p-5">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>{{ usuario.nome }}</h1>
+          <h2>{{ usuario.areaDeAtuacao }}</h2>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Bio</h5>
+              <p class="card-text">
+                {{ usuario.biografia }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
