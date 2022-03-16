@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: 'delete-tema/:id', component: DeleteTemaComponent },
   { path: 'edit-postagem/:id', component: EditPostagemComponent },
   { path: 'delete-postagem/:id', component: DeletePostagemComponent },
+  { path: 'edit-usuario/:id', component: EditUsuarioComponent },
 ];
 
 @NgModule({

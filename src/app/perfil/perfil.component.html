@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row d-flex align-items-start p-5">
     <div class="col-md-3 text-center p-4 rounded">
-      <div class="d-flex justify-content-center mb-4">
+      <div class="d-flex justify-content-center">
         <img
           src="{{ usuario.foto }}"
           alt="avatar"
@@ -11,213 +11,23 @@
         />
       </div>
       <nav class="nav nav-pills flex-column">
-        <a
-          class="nav-link active mb-2"
-          id="nav-perfil-tab"
-          data-toggle="tab"
-          href="#nav-perfil"
-          role="tab"
-          aria-controls="nav-perfil"
-          aria-selected="true"
-          >Perfil</a
-        >
-        <a
-          class="nav-link mb-2"
-          id="nav-postagens-tab"
-          data-toggle="tab"
-          href="#nav-postagens"
-          role="tab"
-          aria-controls="nav-postagens"
-          aria-selected="false"
-          >Publicações</a
-        >
-        <a
-          *ngIf="podeEditar()"
-          class="nav-link btn-roxo mb-2"
-          (click)="abrirEditUserModal(usuario.id)"
-          >Editar Perfil</a
-        >
-        <a
-          *ngIf="podeTornarAdmin()"
-          (click)="tornarAdmin()"
-          class="nav-link btn-roxo mb-2"
-          >Tornar Admin</a
-        >
-        <a [routerLink]="['/inicio']" class="nav-link btn-roxo mb-2"
-          >Voltar pro feed</a
-        >
+        <a class="nav-link active mt-2" href="#">Editar Perfil</a>
+        <a class="nav-link active mt-2" href="#">Link</a>
+        <a class="nav-link active mt-2" href="#">Link</a>
+        <a class="nav-link active mt-2">Disabled</a>
       </nav>
     </div>
     <div class="col-md-8 p-5">
       <div class="row">
         <div class="col-md-12">
-          <div class="tab-content mt-4" id="nav-tabContent">
-            <div
-              class="tab-pane fade show active"
-              id="nav-perfil"
-              role="tabpanel"
-              aria-labelledby="nav-perfil-tab"
-            >
-              <h1>{{ usuario.nome }}</h1>
-              <h2>
-                {{
-                  taPreenchido(usuario.areaDeAtuacao)
-                    ? usuario.areaDeAtuacao
-                    : "Não informado"
-                }}
-              </h2>
-              <div class="card mt-4">
-                <div class="card-body">
-                  <h5 class="card-title">Bio</h5>
-                  <p class="card-text">
-                    {{ usuario.biografia }}
-                    {{
-                      taPreenchido(usuario.biografia)
-                        ? usuario.biografia
-                        : "Não informado"
-                    }}
-                  </p>
-                </div>
-              </div>
-              <div class="card mt-3">
-                <div class="card-body">
-                  <h5 class="card-title">Contato</h5>
-                  <table>
-                    <tbody>
-                      <tr>
-                        <th>Cidade</th>
-                        <td>
-                          {{
-                            taPreenchido(usuario.cidade)
-                              ? usuario.cidade
-                              : "Não informado"
-                          }}
-                        </td>
-                        <th>E-mail</th>
-                        <td>
-                          {{ usuario.email }}
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>Telefone</th>
-                        <td>{{ usuario.telefone }}</td>
-                        <th>LinkedIn</th>
-                        <td *ngIf="usuario.linkedin != null">
-                          <a href="{{ usuario.linkedin }}">{{
-                            usuario.linkedin
-                          }}</a>
-                        </td>
-                        <td *ngIf="usuario.linkedin == null">Não informado</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div class="card mt-3">
-                <div class="card-body">
-                  <h5 class="card-title">Certificações</h5>
-                  <table>
-                    <tbody>
-                      <tr>
-                        <th>Formação</th>
-                        <td>
-                          {{
-                            taPreenchido(usuario.formacao)
-                              ? usuario.formacao
-                              : "Não informado"
-                          }}
-                        </td>
-                        <th>Cursos</th>
-                        <td>
-                          {{
-                            taPreenchido(usuario.certificados)
-                              ? usuario.certificados
-                              : "Não informado"
-                          }}
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>Idiomas</th>
-                        <td>
-                          {{
-                            taPreenchido(usuario.idiomas)
-                              ? usuario.idiomas
-                              : "Não informado"
-                          }}
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div
-              class="tab-pane fade show active"
-              id="nav-postagens"
-              role="tabpanel"
-              aria-labelledby="nav-postagens-tab"
-            >
-              <div
-                class="card mb-4 p-4"
-                *ngFor="let item of usuario.postagens | orderBy: key:reverse"
-              >
-                <div class="card-body">
-                  <h3 class="card-title m-0">{{ item.tituloPost }}</h3>
-                  <p class="card-text my-4">{{ item.textoPost }}</p>
-                  <img
-                    *ngIf="postTemImg(item.imagemPost)"
-                    class="img-post mb-4"
-                    src="{{ item.imagemPost }}"
-                    alt="Imagem da postagem"
-                  />
-
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="d-flex">
-                      <div class="my-4 mr-3">
-                        <a [routerLink]="['/perfil', usuario.id]">
-                          <img
-                            src="{{ usuario.foto }}"
-                            alt="imagem do usuário"
-                            width="50px"
-                            height="50px"
-                            class="img-fluid rounded-circle"
-                          />
-                        </a>
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <small class="text-muted"
-                          >Por:
-                          <a [routerLink]="['/perfil', usuario.id]">
-                            {{ usuario.nome }}
-                          </a>
-                        </small>
-                        <small class="text-muted">
-                          Em {{ item.dataPost | date: "dd/MM/yyyy" }} às
-                          {{ item.dataPost | date: "HH:mm" }}
-                        </small>
-                        <small class="text-muted"
-                          >Assunto: {{ item.tema.descTema }}</small
-                        >
-                      </div>
-                    </div>
-                    <div>
-                      <a
-                        [routerLink]="['/edit-postagem', item.idPost]"
-                        class="btn btn-primary ml-3 mr-3"
-                        >Editar</a
-                      >
-
-                      <a
-                        [routerLink]="['/delete-postagem', item.idPost]"
-                        class="btn btn-danger"
-                        >Apagar</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <h1>{{ usuario.nome }}</h1>
+          <h2>{{ usuario.areaDeAtuacao }}</h2>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Bio</h5>
+              <p class="card-text">
+                {{ usuario.biografia }}
+              </p>
             </div>
           </div>
         </div>

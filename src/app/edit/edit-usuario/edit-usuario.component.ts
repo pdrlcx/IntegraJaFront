@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { BsModalRef } from 'ngx-bootstrap/modal';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/model/Usuario';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
@@ -12,12 +11,13 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class EditUsuarioComponent implements OnInit {
   usuario: Usuario = new Usuario();
-  idUsuario: any;
+  idUsuario: number;
+  confirmarSenha: string;
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    public modalRef: BsModalRef
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
@@ -27,8 +27,13 @@ export class EditUsuarioComponent implements OnInit {
       alert('Sua seção expirou para sua segurança! Faça o login novamente!');
       this.router.navigate(['/login']);
     }
+    this.idUsuario = this.route.snapshot.params['id'];
     this.findByIdUsuario(this.idUsuario);
     this.authService.refreshToken();
+  }
+
+  confirmSenha(event: any) {
+    this.confirmarSenha = event.target.value;
   }
 
   findByIdUsuario(id: number) {
@@ -38,18 +43,22 @@ export class EditUsuarioComponent implements OnInit {
   }
 
   atualizar() {
-    this.authService
-      .atualizarUsuario(this.usuario)
-      .subscribe((resp: Usuario) => {
-        this.usuario = resp;
-        this.router.navigate(['/inicio']);
-        alert('Usuário atualizado com sucesso!');
-        environment.token = '';
-        environment.nome = '';
-        environment.foto = '';
-        environment.tipo = '';
-        environment.id = 0;
-        this.router.navigate(['/login']);
-      });
+    if (this.usuario.senha != this.confirmarSenha) {
+      alert('As senhas não conferem!');
+    } else {
+      this.authService
+        .atualizarUsuario(this.usuario)
+        .subscribe((resp: Usuario) => {
+          this.usuario = resp;
+          this.router.navigate(['/inicio']);
+          alert('Usuário atualizado com sucesso!');
+          environment.token = '';
+          environment.nome = '';
+          environment.foto = '';
+          environment.tipo = '';
+          environment.id = 0;
+          this.router.navigate(['/login']);
+        });
+    }
   }
 }
