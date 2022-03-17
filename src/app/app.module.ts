@@ -20,7 +20,6 @@ import { DeleteTemaComponent } from './delete/delete-tema/delete-tema.component'
 import { EditUsuarioComponent } from './edit/edit-usuario/edit-usuario.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { TemaComponent } from './tema/tema.component';
-import { ObrigadoComponent } from './obrigado/obrigado.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
 FormsModule;
@@ -38,8 +37,7 @@ FormsModule;
     EditTemaComponent,
     DeleteTemaComponent,
     EditUsuarioComponent,
-    QuemSomosComponent,
-    ObrigadoComponent,
+    QuemSomosComponent,    
     PerfilComponent,
   ],
   imports: [

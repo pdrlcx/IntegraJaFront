@@ -13,7 +13,6 @@ import { EditUsuarioComponent } from './edit/edit-usuario/edit-usuario.component
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ContatoComponent } from './contato/contato.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
-import { ObrigadoComponent } from './obrigado/obrigado.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
@@ -24,8 +23,7 @@ const routes: Routes = [
   { path: 'tema', component: TemaComponent },
   { path: 'landing', component: LandingPageComponent },
   { path: 'contato', component: ContatoComponent },
-  { path: 'quem-somos', component: QuemSomosComponent },
-  { path: 'obrigado', component: ObrigadoComponent },
+  { path: 'quem-somos', component: QuemSomosComponent },  
   { path: 'perfil/:id', component: PerfilComponent },
 
   { path: 'edit-tema/:id', component: EditTemaComponent },
