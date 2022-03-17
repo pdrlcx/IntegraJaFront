@@ -9,31 +9,31 @@ import { Usuario } from '../model/Usuario';
   providedIn: 'root',
 })
 export class TemaService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token),
-  };
+  }
 
   getAllTema(): Observable<Tema[]> {
     return this.http.get<Tema[]>(
       'https://integra-ja.herokuapp.com/tema',
       this.token
-    );
+    )
   }
 
   getByIdTema(id: number): Observable<Tema> {
     return this.http.get<Tema>(
       `https://integra-ja.herokuapp.com/tema/${id}`,
       this.token
-    );
+    )
   }
 
   getByNomeTema(nome: string): Observable<Tema[]> {
     return this.http.get<Tema[]>(
       `https://integra-ja.herokuapp.com/tema/desc/${nome}`,
       this.token
-    );
+    )
   }
 
   postTema(tema: Tema): Observable<Tema> {
@@ -41,7 +41,7 @@ export class TemaService {
       'https://integra-ja.herokuapp.com/tema',
       tema,
       this.token
-    );
+    )
   }
 
   putTema(tema: Tema): Observable<Tema> {
@@ -49,13 +49,13 @@ export class TemaService {
       'https://integra-ja.herokuapp.com/tema',
       tema,
       this.token
-    );
+    )
   }
 
   deleteTema(id: number) {
     return this.http.delete(
       `https://integra-ja.herokuapp.com/tema/${id}`,
       this.token
-    );
+    )
   }
 }

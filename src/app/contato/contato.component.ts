@@ -13,7 +13,7 @@ export class ContatoComponent implements OnInit {
   ngOnInit() {
   }
 
-  mensagem() {
+  obrigado() {
     alert("Mensagem Enviada com Sucesso")
   }
 
