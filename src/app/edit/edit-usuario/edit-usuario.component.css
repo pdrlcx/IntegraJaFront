@@ -2,29 +2,3 @@
   min-width: 300px;
   margin: 15px;
 }
-
-.btn-roxo {
-  background-color: #8c52ff !important;
-  color: white !important;
-}
-
-.btn-roxo:hover {
-  background-color: #fff !important;
-  border: 2px solid #8c52ff !important;
-  color: #8c52ff !important;
-}
-
-.btn-rosa {
-  background-color: #ff66c4 !important;
-  color: white !important;
-}
-
-.btn-rosa:hover {
-  background-color: #fff !important;
-  border: 2px solid #ff66c4 !important;
-  color: #ff66c4 !important;
-}
-
-.btn-sizing {
-  width: 100px;
-}

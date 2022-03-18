@@ -1,9 +1,11 @@
-<div class="conteiner-fluid">
+<div class="container-fluid background">
   <div class="row d-flex">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="row d-flex justify-content-center">
         <div class="col-md-6">
-          <div class="container mt-5 vh-100 justify-content-center d-flex align-items-center login-box">
+          <div
+            class="container mt-5 justify-content-center d-flex align-items-center login-box"
+          >
             <form>
               <h1 class="text-center mb-5">Entrar</h1>
               <div class="form-group user-box">
@@ -31,27 +33,28 @@
                 <label for="senha">Senha</label>
               </div>
               <div class="d-flex justify-content-center">
-              <button
-                type="submit"
-                class="btn btn-primary"
-                (click)="login($event)"
-              >
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-                Entrar
-              </button>
-            </div>
+                <button
+                  type="submit"
+                  class="btn btn-roxo"
+                  (click)="login($event)"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Entrar
+                </button>
+              </div>
               <hr class="my-3" />
               <p class="text-center">
-                Não tem uma conta? <a routerLink="/cadastro">Cadastre-se!</a>
+                Não tem uma conta?
+                <a class="cadastre" routerLink="/cadastro">Cadastre-se!</a>
               </p>
             </form>
           </div>
         </div>
       </div>
-    </div> 
-    <div class="col-md-8" id="img-bg"></div>   
-  </div>  
+    </div>
+    <div class="col-md-6"></div>
+  </div>
 </div>

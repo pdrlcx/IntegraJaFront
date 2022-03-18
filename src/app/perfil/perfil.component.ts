@@ -43,8 +43,8 @@ export class PerfilComponent implements OnInit {
     });
   }
 
-  abrirEditUserModal(idUsuario: number) {
-    const initialState = { idUsuario: idUsuario };
+  abrirEditUserModal(usuario: Usuario) {
+    const initialState = { usuario: usuario };
     this.modalR = this.modalService.show(EditUsuarioComponent, {
       initialState,
       class: 'modal-xl',
@@ -59,32 +59,12 @@ export class PerfilComponent implements OnInit {
     return pode;
   }
 
-  podeTornarAdmin() {
-    let pode = false;
-    if (environment.tipo == 'admin') {
-      if (environment.id != this.usuario.id) {
-        if (this.usuario.tipo != 'admin') {
-          pode = true;
-        }
-      }
-    }
-    return pode;
-  }
-
   postTemImg(imagem: string) {
     let tem = false;
     if (imagem != undefined) {
       tem = true;
     }
     return tem;
-  }
-
-  tornarAdmin() {
-    this.usuario.tipo = 'admin';
-    this.usuarioService.putUsuario(this.usuario).subscribe((resp: Usuario) => {
-      this.usuario = resp;
-      alert(this.usuario.nome + ' agora é um administrador!');
-    });
   }
 
   taPreenchido(campo: string) {
