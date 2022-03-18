@@ -34,14 +34,8 @@
         <a
           *ngIf="podeEditar()"
           class="nav-link btn-roxo mb-2"
-          (click)="abrirEditUserModal(usuario.id)"
+          (click)="abrirEditUserModal(usuario)"
           >Editar Perfil</a
-        >
-        <a
-          *ngIf="podeTornarAdmin()"
-          (click)="tornarAdmin()"
-          class="nav-link btn-roxo mb-2"
-          >Tornar Admin</a
         >
         <a [routerLink]="['/inicio']" class="nav-link btn-roxo mb-2"
           >Voltar pro feed</a
@@ -70,7 +64,6 @@
                 <div class="card-body">
                   <h5 class="card-title">Bio</h5>
                   <p class="card-text">
-                    {{ usuario.biografia }}
                     {{
                       taPreenchido(usuario.biografia)
                         ? usuario.biografia

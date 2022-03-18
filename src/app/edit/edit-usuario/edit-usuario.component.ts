@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { Usuario } from 'src/app/model/Usuario';
 import { AuthService } from 'src/app/service/auth.service';
+import { UsuarioService } from 'src/app/service/usuario.service';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
@@ -11,12 +12,12 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./edit-usuario.component.css'],
 })
 export class EditUsuarioComponent implements OnInit {
-  usuario: Usuario = new Usuario();
-  idUsuario: any;
+  usuario: any;
 
   constructor(
     private authService: AuthService,
     private router: Router,
+    public usuarioService: UsuarioService,
     public modalRef: BsModalRef
   ) {}
 
@@ -27,14 +28,7 @@ export class EditUsuarioComponent implements OnInit {
       alert('Sua seção expirou para sua segurança! Faça o login novamente!');
       this.router.navigate(['/login']);
     }
-    this.findByIdUsuario(this.idUsuario);
     this.authService.refreshToken();
-  }
-
-  findByIdUsuario(id: number) {
-    this.authService.getByIdUsuario(id).subscribe((resp: Usuario) => {
-      this.usuario = resp;
-    });
   }
 
   atualizar() {
@@ -42,14 +36,8 @@ export class EditUsuarioComponent implements OnInit {
       .atualizarUsuario(this.usuario)
       .subscribe((resp: Usuario) => {
         this.usuario = resp;
-        this.router.navigate(['/inicio']);
         alert('Usuário atualizado com sucesso!');
-        environment.token = '';
-        environment.nome = '';
-        environment.foto = '';
-        environment.tipo = '';
-        environment.id = 0;
-        this.router.navigate(['/login']);
+        this.modalRef.hide();
       });
   }
 }

@@ -10,3 +10,11 @@
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 400;
 }
+
+.roxo {
+  color: #8c52ff;
+}
+
+nav {
+  box-shadow: 1px 5px 30px 0px rgba(0, 0, 0, 0.51);
+}

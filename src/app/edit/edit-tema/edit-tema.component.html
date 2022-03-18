@@ -1,21 +1,32 @@
-<div class="container mt-5 mb-5">
-  <div class="row">
-    <div class="col-md-12">
-      <h1 class="text-center text-secondary">Atualizar Tema</h1>
+<div class="container-fluid">
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-center text-secondary">Atualizar Tema</h1>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row d-flex justify-content-center">
-  <div class="col-md-6">
-    <div class="form-group">
-      <label for="descTema">Descrição</label>
-      <input type="text" class="form-control" id="descTema" [(ngModel)]="tema.descTema">
-    </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="descTema">Descrição</label>
+        <input
+          type="text"
+          class="form-control"
+          id="descTema"
+          [(ngModel)]="tema.descTema"
+        />
+      </div>
 
-    <div class="d-flex justify-content-center">
-      <button class="btn btn-danger mr-4" routerLink="/tema">Cancelar</button>
-      <button class="btn btn-success" (click)="atualizar()">Atualizar</button>
+      <div class="d-flex justify-content-center">
+        <button class="btn btn-rosa btn-sizing mr-4" routerLink="/tema">
+          Cancelar
+        </button>
+        <button class="btn btn-roxo btn-sizing" (click)="atualizar()">
+          Atualizar
+        </button>
+      </div>
     </div>
   </div>
 </div>

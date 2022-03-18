@@ -1,8 +1,10 @@
 <div class="container-fluid">
-  <div class="row align-items-center">
-    <div class="col-md-5 d-flex ml-5" id="img-bg"></div>
+  <div class="row justify-content-around align-items-center">
+    <div class="col-md-4 d-flex ml-5 img-bg"></div>
     <div class="col-md-5 d-flex justify-content-center align-items-center">
-      <div class="row d-flex align-items-center justify-content-center cadastro-box ml-5 mt-3">
+      <div
+        class="row d-flex align-items-center justify-content-center cadastro-box"
+      >
         <div class="col-md-10">
           <h1 class="text-center">Cadastro</h1>
           <div class="form-group user-box">
@@ -31,66 +33,65 @@
           </div>
           <div class="form-group user-box">
             <input
-            [(ngModel)]="usuario.foto"
-            class="form-control"
-            type="text"
-            name="foto"
-            required=""
-            id="foto"
-            aria-describedby="linkDaFotoHelp"
+              [(ngModel)]="usuario.foto"
+              class="form-control"
+              type="text"
+              name="foto"
+              required=""
+              id="foto"
+              aria-describedby="linkDaFotoHelp"
             />
             <label for="foto">Link da foto</label>
           </div>
           <div class="form-group">
             <div class="form-group user-box">
               <input
-              [(ngModel)]="usuario.telefone"
-              class="form-control"
-              type="text"
-              name="telefone"
-              required=""
-              id="telefone"
-              aria-describedby="telefoneHelp"
+                [(ngModel)]="usuario.telefone"
+                class="form-control"
+                type="text"
+                name="telefone"
+                required=""
+                id="telefone"
+                aria-describedby="telefoneHelp"
               />
               <label for="telefone">Telefone</label>
             </div>
             <div class="form-group user-box">
               <input
-              (input)="checarSenha($event)"
-              class="form-control"
-              type="password"
-              name="senha"
-              required=""
-              id="senha"
-              aria-describedby="senhaHelp"
+                (input)="checarSenha($event)"
+                class="form-control"
+                type="password"
+                name="senha"
+                required=""
+                id="senha"
+                aria-describedby="senhaHelp"
               />
               <label for="senha">Senha</label>
-          </div>
-          <div class="form-group user-box">
-            <input
-            [(ngModel)]="usuario.senha"
-            class="form-control"
-            type="password"
-            name="confirmSenha"
-            required=""
-            id="confirmSenha"
-            aria-describedby="confirmarSenhaHelp"
-            />
-            <label for="confirmSenha">Confirmar senha</label>
-          </div>
-          <div class="d-flex justify-content-center mt-4">
-            <button type="submit" class="btn btn-success mr-5" (click)="cadastrar()">
-
-              Cadastrar
-            </button>
-            <button
-              type="submit"
-              class="btn btn-danger"
-              routerLink="/login"
-            >
-
-              Cancelar
-            </button>
+            </div>
+            <div class="form-group user-box">
+              <input
+                [(ngModel)]="usuario.senha"
+                class="form-control"
+                type="password"
+                name="confirmSenha"
+                required=""
+                id="confirmSenha"
+                aria-describedby="confirmarSenhaHelp"
+              />
+              <label for="confirmSenha">Confirmar senha</label>
+            </div>
+            <div class="d-flex justify-content-center mt-4">
+              <button
+                type="submit"
+                class="btn btn-success mr-5"
+                (click)="cadastrar()"
+              >
+                Cadastrar
+              </button>
+              <button type="submit" class="btn btn-danger" routerLink="/login">
+                Cancelar
+              </button>
+            </div>
           </div>
         </div>
       </div>

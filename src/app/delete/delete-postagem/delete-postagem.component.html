@@ -1,18 +1,27 @@
-<div class="container mb-5 mt-5">
-  <div class="row" style="background-color: #8c52ff;">
-    <div class="col-md-12">
-      <h1 class="text-center text-white">Apagar postagem</h1>
+<div class="container-fluid">
+  <div class="container mb-5 mt-5">
+    <div class="row" style="background-color: #8c52ff">
+      <div class="col-md-12">
+        <h1 class="text-center text-white">Apagar postagem</h1>
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <h4 class="text-center text-secondary d-flex justify-content-center mt-5">
-        Você tem certeza que deseja apagar essa postagem?
-      </h4>
-      <div class="d-flex justify-content-center mt-3">
-      <button class="btn btn-danger mr-4" routerLink="/inicio">Não</button>
-      <button class="btn btn-success" (click)="apagar()">Sim</button>
-    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h4
+          class="text-center text-secondary d-flex justify-content-center mt-5"
+        >
+          Você tem certeza que deseja apagar essa postagem?
+        </h4>
+        <div class="d-flex justify-content-center mt-3">
+          <button class="btn btn-rosa btn-sizing mr-4" routerLink="/inicio">
+            Não
+          </button>
+          <button class="btn btn-roxo btn-sizing" (click)="apagar()">
+            Sim
+          </button>
+        </div>
+      </div>
     </div>
   </div>
+</div>
