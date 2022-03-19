@@ -1,8 +1,68 @@
 #img-bg {
-	background-image: url(https://i.imgur.com/O3415DP.png);
-
-	height: 900px;
+	background-image: url(https://i.ibb.co/GWBWd49/Get-in-touch-rafiki.png);
+  width: 600px;
+	height: 870px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+.contato-box {
+  position: inherit;
+  height: fit-content;
+  width: 500px;
+  padding: 20px;
+  transform: translate(5%, -1%);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-radius: 10px;
+}
+
+.contato-box .user-box {
+  position: relative;
+}
+
+/* .contato-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 15px;
+  color: rgb(8, 0, 0);
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid rgb(50, 5, 212);
+  outline: none;
+  background: transparent;
+}
+
+.contato-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 9px 0;
+  font-size: 20px;
+  color: rgb(7, 0, 0);
+  pointer-events: none;
+  transition: .5s;
+} */
+
+/* .contato-box .user-box input:focus ~ label,
+.contato-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #616161;
+  font-size: 14px;
+} */
+
+.contato-box form button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 0px;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
