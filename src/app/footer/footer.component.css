@@ -1,41 +1,49 @@
-ul.redes-sociais{
-    list-style:none;
-    padding: 0;
+ul.redes-sociais {
+  list-style: none;
+  padding: 0;
 }
 
-ul.redes-sociais li{
-display: inline;
-margin: 0;
-padding: 5px;
+ul.redes-sociais li {
+  display: inline;
+  margin: 0;
+  padding: 5px;
 }
 
-.fa{
-    font-size:25pt;
-    color: black;
-    padding: 3px;
+.fa {
+  font-size: 25pt;
+  color: black;
+  padding: 3px;
 }
 
 .fa-linkedin:hover {
-    color: rgb(37, 37, 255);
+  color: rgb(37, 37, 255);
 }
 
 .fa-github:hover {
-    color: white;
+  color: white;
 }
 
 .fa-instagram:hover {
-    color: rgb(190, 76, 0)
+  color: rgb(190, 76, 0);
 }
 
 .fa-facebook:hover {
-    color: rgb(37, 37, 255);
+  color: rgb(37, 37, 255);
 }
 
 .fa-youtube:hover {
-    color: rgb(206, 5, 5);
+  color: rgb(206, 5, 5);
 }
 
 footer {
-    background: rgb(168,73,203);
-    background: linear-gradient(22deg, rgba(168,73,203,1) 0%, rgba(240,203,239,1) 100%);
+  background: rgb(168, 73, 203);
+  background: linear-gradient(
+    22deg,
+    rgba(168, 73, 203, 1) 0%,
+    rgba(240, 203, 239, 1) 100%
+  );
+}
+
+a {
+  margin: 0 15px 0 15px;
 }
