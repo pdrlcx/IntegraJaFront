@@ -23,7 +23,7 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastrar() {
-    this.usuario.tipo = 'admin';
+    this.usuario.tipo = 'comum';
 
     if (this.usuario.senha != this.confirmarSenha) {
       alert('A senha está incorreta!');

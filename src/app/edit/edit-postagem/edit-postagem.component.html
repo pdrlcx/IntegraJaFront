@@ -9,7 +9,7 @@
 
   <div class="container border">
     <div class="row d-flex justify-content-center align-items-center mt-3">
-      <div class="col-md-8 mb-3 justify-content-center align-items-center">
+      <div class="col-md-12 mb-3 justify-content-center align-items-center">
         <div class="form-group">
           <label for="titulo">Titulo</label>
           <input
@@ -45,10 +45,7 @@
         </div>
 
         <div class="form-group">
-          <label for="tema"
-            >Escolha um tema ou
-            <a data-dismiss="modal" routerLink="/tema">cadastre um novo</a>
-          </label>
+          <label for="tema">Tema </label>
           <select
             name="tema"
             id="tema"
@@ -56,6 +53,9 @@
             [(ngModel)]="idTema"
             (change)="findByIdTema()"
           >
+            <option [ngValue]="undefined" hidden disabled>
+              Selecione um tema
+            </option>
             <option *ngFor="let item of listaTemas" value="{{ item.idTema }}">
               {{ item.descTema }}
             </option>
@@ -63,6 +63,15 @@
         </div>
 
         <div class="d-flex justify-content-center">
+          <button
+            *ngIf="usuarioService.seForAdmin()"
+            type="button"
+            class="btn btn-azul mr-auto"
+            [routerLink]="['/tema']"
+            data-dismiss="modal"
+          >
+            Cadastre um tema
+          </button>
           <button class="btn btn-rosa btn-sizing mr-4" routerLink="/inicio">
             Cancelar
           </button>
