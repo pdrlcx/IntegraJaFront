@@ -10,18 +10,22 @@ import { TemaService } from '../service/tema.service';
   styleUrls: ['./tema.component.css'],
 })
 export class TemaComponent implements OnInit {
-
   tema: Tema = new Tema();
   listaTemas: Tema[];
 
   key = 'idTema';
 
-  constructor(private router: Router, private temaService: TemaService) { }
+  constructor(private router: Router, private temaService: TemaService) {}
 
   ngOnInit() {
     if (environment.token == '') {
       alert('Sua sessão expirou, por favor, faça o login novamente.');
       this.router.navigate(['/login']);
+    }
+
+    if (environment.tipo != 'admin') {
+      alert('Somente administrador pode cadastrar novos temas');
+      this.router.navigate(['/inicio']);
     }
     this.findAllTemas();
   }
@@ -34,10 +38,10 @@ export class TemaComponent implements OnInit {
 
   cadastrar() {
     this.temaService.postTema(this.tema).subscribe((resp: Tema) => {
-      this.tema = resp
-      alert('Tema cadastrado com sucesso !!!')
-      this.findAllTemas()
-      this.tema = new Tema()
-    })
+      this.tema = resp;
+      alert('Tema cadastrado com sucesso !!!');
+      this.findAllTemas();
+      this.tema = new Tema();
+    });
   }
 }

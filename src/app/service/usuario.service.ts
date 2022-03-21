@@ -28,4 +28,12 @@ export class UsuarioService {
       this.token
     );
   }
+
+  seForAdmin() {
+    let admin = false;
+    if (environment.tipo == 'admin') {
+      admin = true;
+    }
+    return admin;
+  }
 }

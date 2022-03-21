@@ -7,6 +7,7 @@ import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
+import { UsuarioService } from '../service/usuario.service';
 
 @Component({
   selector: 'app-inicio',
@@ -34,7 +35,8 @@ export class InicioComponent implements OnInit {
     private auth: AuthService,
     private router: Router,
     private postagemService: PostagemService,
-    private temaService: TemaService
+    private temaService: TemaService,
+    public usuarioService: UsuarioService
   ) {}
 
   ngOnInit() {
