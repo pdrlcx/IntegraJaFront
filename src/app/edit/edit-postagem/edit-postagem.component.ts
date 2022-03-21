@@ -36,13 +36,13 @@ export class EditPostagemComponent implements OnInit {
 
     let id = this.route.snapshot.params['id'];
     this.findByIdPostagem(id);
-    this.idTema = this.postagem.tema.idTema;
     this.findAllTemas();
   }
 
   findByIdPostagem(id: number) {
     this.postagemService.getByIdPostagem(id).subscribe((resp: Postagem) => {
       this.postagem = resp;
+      this.idTema = resp.tema.idTema;
     });
   }
 
