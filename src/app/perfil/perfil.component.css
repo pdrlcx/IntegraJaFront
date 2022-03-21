@@ -27,3 +27,13 @@ table {
 .card {
   box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.83);
 }
+
+.img-post {
+  max-width: 100%;
+}
+
+.card-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

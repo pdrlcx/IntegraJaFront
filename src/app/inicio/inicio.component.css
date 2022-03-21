@@ -2,6 +2,12 @@
   max-width: 100%;
 }
 
+.card-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .nav-pills .nav-link {
   transition: 200ms;
   background-color: #8c52ff;

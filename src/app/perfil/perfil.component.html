@@ -157,12 +157,13 @@
                 <div class="card-body">
                   <h3 class="card-title m-0">{{ item.tituloPost }}</h3>
                   <p class="card-text my-4">{{ item.textoPost }}</p>
-                  <img
-                    *ngIf="postTemImg(item.imagemPost)"
-                    class="img-post mb-4"
-                    src="{{ item.imagemPost }}"
-                    alt="Imagem da postagem"
-                  />
+                  <div *ngIf="postTemImg(item.imagemPost)" class="card-img">
+                    <img
+                      class="img-post mb-4"
+                      src="{{ item.imagemPost }}"
+                      alt="Imagem da postagem"
+                    />
+                  </div>
 
                   <div class="d-flex justify-content-between align-items-end">
                     <div class="d-flex">
