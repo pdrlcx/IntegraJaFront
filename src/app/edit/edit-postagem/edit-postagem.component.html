@@ -53,9 +53,6 @@
             [(ngModel)]="idTema"
             (change)="findByIdTema()"
           >
-            <option [ngValue]="undefined" hidden disabled>
-              Selecione um tema
-            </option>
             <option *ngFor="let item of listaTemas" value="{{ item.idTema }}">
               {{ item.descTema }}
             </option>
